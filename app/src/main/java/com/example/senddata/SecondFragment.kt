@@ -1,0 +1,34 @@
+package com.example.senddata
+
+import android.os.Bundle
+import androidx.fragment.app.Fragment
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import android.widget.TextView
+
+
+class SecondFragment : Fragment() {
+
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+
+    }
+
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        val view=inflater.inflate(R.layout.fragment_second,container,false)
+        val textView:TextView=view.findViewById(R.id.displayMessage)
+
+        val args=this.arguments
+        val inputData=args?.get("data")
+        textView.text=inputData.toString()
+
+        return view
+    }
+
+
+}
